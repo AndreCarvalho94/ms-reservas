@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:testdb
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+confluent-cloud:
+  broker:
+    url: pkc-4yyd6.us-east1.gcp.confluent.cloud:9092
+    key-id: TOPICO_RESERVA
+  topico: acdev.reserva
