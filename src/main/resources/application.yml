@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: test
   datasource:
     driverClassName: org.h2.Driver
     password: password
