@@ -9,6 +9,6 @@ import java.net.URI;
 @Component
 public class UriUtils {
     public URI getUri(Reserva reserva, UriComponentsBuilder uriBuilder) {
-        return uriBuilder.path("/reservas/{id}").buildAndExpand(reserva.getId()).toUri();
+        return uriBuilder.path("/v1/reservas/{id}").buildAndExpand(reserva.getId()).toUri();
     }
 }

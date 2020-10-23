@@ -29,7 +29,7 @@ public class ReservaController {
     private final ReservaDtoConverter reservaDtoConverter;
     private final UriUtils uriUtils;
 
-    @PostMapping("/{clienteId}")
+    @PostMapping("/cliente/{clienteId}")
     public ResponseEntity<ReservaResponse> criarReserva(@PathVariable Long clienteId,
                                                         @RequestBody ReservaRequest reservaRequest,
                                                         UriComponentsBuilder uriBuilder) {

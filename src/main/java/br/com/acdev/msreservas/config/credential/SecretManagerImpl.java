@@ -6,7 +6,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CofreImpl implements Cofre {
+public class SecretManagerImpl implements SecretManager {
 
 
     @Autowired
@@ -18,6 +18,6 @@ public class CofreImpl implements Cofre {
         return Credencial.builder().
                 key(key).
                 secret(secret).
-                keyId(secretId).build();
+                id(secretId).build();
     }
 }

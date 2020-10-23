@@ -1,7 +1,7 @@
 package br.com.acdev.msreservas.config.confluent;
 
 
-import br.com.acdev.msreservas.config.credential.Cofre;
+import br.com.acdev.msreservas.config.credential.SecretManager;
 import br.com.acdev.msreservas.config.credential.Credencial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import java.util.Properties;
 public class KafkaProperties {
 
     @Autowired
-    private Cofre cofre;
+    private SecretManager secretManager;
 
     @Autowired
     private ConfluentProperties confluentProperties;
@@ -32,7 +32,7 @@ public class KafkaProperties {
     }
 
     private void configurarCredenciais() {
-        Credencial credencial = cofre.getCredencial(confluentProperties.getBroker().getKeyId());
+        Credencial credencial = secretManager.getCredencial(confluentProperties.getBroker().getKeyId());
         confluentProperties.getBroker().setToken(credencial.getKey());
         confluentProperties.getBroker().setSecret(credencial.getSecret());
     }

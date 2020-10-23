@@ -14,6 +14,6 @@ public class Credencial {
 
     private String key;
     private String secret;
-    private String keyId;
+    private String id;
 
 }
